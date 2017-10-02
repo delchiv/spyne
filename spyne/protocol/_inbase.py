@@ -234,8 +234,8 @@ class InProtocolBase(ProtocolMixin):
         if string is None:
             return None
 
-        if six.PY3:
-            assert isinstance(string, str)
+        # if six.PY3:
+        #     assert isinstance(string, str)
 
         if isinstance(string, six.string_types) and len(string) == 0 and \
                                                 class_.Attributes.empty_is_none:
