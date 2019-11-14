@@ -78,6 +78,8 @@ class ServerBase(object):
             ctx.out_error = e
 
             retval = (ctx,)
+            
+            ctx.fire_event('method_exception_object')
 
         return retval
 
@@ -96,6 +98,8 @@ class ServerBase(object):
             ctx.in_object = None
             ctx.in_error = e
             ctx.out_error = e
+            
+            ctx.fire_event('method_exception_object')
 
     def get_out_object(self, ctx):
         """Calls the matched user function by passing it the ``ctx.in_object``
